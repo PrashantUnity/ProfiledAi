@@ -1,0 +1,9 @@
+@using ProfiledAi.Models
+<div class="@($"message {@Model.MessageType}")">
+    @Model.MessageText
+    <div class="message-time">@Model.SentAt</div>
+</div>
+
+@code{
+    [Parameter] public MessageModel Model { get; set; }
+}

@@ -1,0 +1,23 @@
+@using ProfiledAi.Models
+<div class="chat-header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <button class="back-btn icon-btn"><i class="bi bi-arrow-left"></i></button>
+        <div class="chat-avatar me-3">A</div>
+        <div>
+            <h5 class="mb-0">@Model.Name</h5>
+            <small class="text-muted">@Model.SystemPrompt.Substring(0,15) ...</small>
+        </div>
+    </div>
+    <div>
+        <button class="icon-btn"><i class="bi bi-three-dots-vertical"></i></button>
+    </div>
+</div>
+<div class="message-container">
+    @foreach(var message in @Model.MessageList)
+    { 
+        <MessageSent Model="@message"/> 
+    }
+</div>
+@code{
+    [Parameter, EditorRequired] public PersonaModel Model { get; set; }
+}

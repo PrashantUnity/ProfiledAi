@@ -1,0 +1,12 @@
+@using ProfiledAi.Models
+<PersonaHeader/>
+<SearchContainer/>
+<div class="chat-list">
+    @foreach(var persona in Model)
+    {
+        <Persona Model="@persona"/>
+    }
+</div>
+@code {
+    [Parameter, EditorRequired] public List<PersonaModel> Model { get; set; } = null!;
+}

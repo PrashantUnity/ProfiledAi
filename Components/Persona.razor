@@ -1,0 +1,21 @@
+@using ProfiledAi.Models
+<div class="@($"chat-item {@Model.IsActive}")">
+    <div class="chat-avatar">@Model.Avatar</div>
+    <div class="chat-info">
+        <div class="d-flex justify-content-between">
+            <h6>@Model.Name</h6>
+            <span class="chat-time">@Model.Time</span>
+        </div>
+        <div class="chat-preview d-flex">
+            <span>@Model.LastMessage</span>
+            @if (Model.UnreadCount > 0)
+            {
+                <span class="unread-count">@Model.UnreadCount</span>    
+            }
+        </div>
+    </div>
+</div>
+
+@code{
+    [Parameter,EditorRequired] public PersonaModel Model { get; set; }
+}
