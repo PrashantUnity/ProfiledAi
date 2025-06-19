@@ -2,6 +2,7 @@ namespace ProfiledAi.Models;
 
 public class PersonaModel
 {
+    public Guid Id { get; set; } = Guid.NewGuid();
     public bool IsLoading { get; set; } = false;
     public string IsActive { get; set; } = string.Empty;
     public string Avatar { get; set; } = string.Empty;

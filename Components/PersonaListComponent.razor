@@ -1,12 +1,45 @@
 @using ProfiledAi.Models
+@using ProfiledAi.Utils
 <PersonaHeader/>
 <SearchContainer/>
 <div class="chat-list">
-    @foreach(var persona in Model)
+    @foreach (var persona in Model)
     {
-        <Persona Model="@persona"/>
+        <Persona Model="@persona" UpdateActiveNess="UpdateModals"/>
     }
 </div>
+
 @code {
     [Parameter, EditorRequired] public List<PersonaModel> Model { get; set; } = null!;
+    [Parameter] public EventCallback<string> SidebarIsActive { get; set; }
+    [Inject] private IJSRuntime JsRuntime { get; set; } = null!;
+
+    private async Task UpdateModals(PersonaModel model)
+    {
+        foreach (var persona in Model)
+        {
+            if (model.Id == persona.Id)
+            {
+                persona.IsActive = Constant.Active;
+            }
+            else
+            {
+                persona.IsActive = string.Empty;
+            }
+        }
+
+        await ShowSidebarMobile();
+        StateHasChanged();
+    }
+
+    private async Task ShowSidebarMobile()
+    {
+        var size = await JsRuntime.InvokeAsync<WindowSize>("getWindowSize");
+        Console.WriteLine($"Width: {size.Width}, Height: {size.Height}");
+        if (size.Width < 768)
+        {
+            await SidebarIsActive.InvokeAsync("active");
+        }
+    }
+
 }
