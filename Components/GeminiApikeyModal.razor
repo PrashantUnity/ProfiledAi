@@ -1,0 +1,35 @@
+@using ProfiledAi.Models
+@using ProfiledAi.Utils
+<div class="modal fade" id="@_model.ModelId" tabindex="-1" aria-labelledby="@_model.AriaLabelledby" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content whatsapp-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="@_model.AriaLabelledby">Enter Message</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="whatsappForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="messageInput" @bind="@_apiKey" placeholder="Enter GeminiKey.." required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="submit" class="btn btn-primary" @onclick="SaveApiKey">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+@code{
+    private readonly PopUpModel _model = Constant.GetGeminiApiKeyInputModel();
+    private string _apiKey = "";
+
+    private void SaveApiKey()
+    {
+        if (string.IsNullOrWhiteSpace(_apiKey))
+        {
+            return;
+        }
+        Constant.ApiKey = _apiKey;
+    }
+}

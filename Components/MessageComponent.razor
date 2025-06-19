@@ -1,0 +1,13 @@
+@using ProfiledAi.Models
+<MessageHeader Model="Model"/>
+<MessageInput Model="Model" OnChange="UpdateModel"/>
+
+@code {
+    [Parameter, EditorRequired] public PersonaModel Model { get; set; } = null!;
+
+    public void UpdateModel(PersonaModel model)
+    {
+        Model = model;
+        StateHasChanged();
+    }
+}

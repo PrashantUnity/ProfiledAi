@@ -1,9 +1,12 @@
+@using ProfiledAi.Utils
 <div class="sidebar-header d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
         <div class="profile-icon">J</div>
     </div>
     <div>
-        <button class="icon-btn"><i class="bi bi-people"></i></button>
-        <button class="icon-btn"><i class="bi bi-chat-dots"></i></button>
+        <button class="icon-btn" data-bs-toggle="modal" data-bs-target="@Constant.GetGeminiApiKeyInputModel().GetCallerModelId()">
+            <i class="bi bi-gear" ></i>
+        </button>
     </div>
 </div>
+<GeminiApikeyModal/>
