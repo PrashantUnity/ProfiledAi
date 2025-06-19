@@ -1,3 +1,49 @@
+/* /Components/GeminiApikeyModal.razor.rz.scp.css */
+.whatsapp-modal .modal-content[b-8jrqj9u8uh] {
+    background-color: #e5ddd5;
+    border-radius: 10px;
+    border: none;
+}
+
+.whatsapp-modal .modal-header[b-8jrqj9u8uh] {
+    background-color: #075e54;
+    color: white;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.whatsapp-modal .modal-footer[b-8jrqj9u8uh] {
+    border-top: none;
+    background-color: #f0f0f0;
+    border-radius: 0 0 10px 10px;
+}
+
+.whatsapp-modal .form-control[b-8jrqj9u8uh] {
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+}
+
+.whatsapp-modal .btn-primary[b-8jrqj9u8uh] {
+    background-color: #25d366;
+    border: none;
+    border-radius: 20px;
+}
+
+.whatsapp-modal .btn-primary:hover[b-8jrqj9u8uh] {
+    background-color: #1ebd5a;
+}
+
+.btn-launch[b-8jrqj9u8uh] {
+    background-color: #25d366;
+    border: none;
+}
+
+.btn-launch:hover[b-8jrqj9u8uh] {
+    background-color: #1ebd5a;
+}
+/* /Components/MessageBodyComponent.razor.rz.scp.css */
+/* /Components/MessageComponent.razor.rz.scp.css */
 /* /Components/MessageHeader.razor.rz.scp.css */
 /* /Components/MessageInput.razor.rz.scp.css */
 /* /Components/MessageSent.razor.rz.scp.css */
