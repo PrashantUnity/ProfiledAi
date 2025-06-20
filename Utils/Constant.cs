@@ -14,8 +14,10 @@ public class Constant
     {
         return new PopUpModel()
         {
+            HeaderTitle = "Gemini Flash 1.5",
             AriaLabelledby = "GeminiApiKeyModel",
-            ModelId = "GeminiApiKeyModelId"
+            ModelId = "GeminiApiKeyModelId",
+            PlaceHolder ="Enter Gemini Api key ..."
         };
     }
 }

@@ -38,7 +38,7 @@
         Console.WriteLine($"Width: {size.Width}, Height: {size.Height}");
         if (size.Width < 768)
         {
-            await SidebarIsActive.InvokeAsync("active");
+            await SidebarIsActive.InvokeAsync(string.Empty);
         }
     }
 
