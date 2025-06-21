@@ -46,6 +46,17 @@
 /* /Components/MessageComponent.razor.rz.scp.css */
 /* /Components/MessageHeader.razor.rz.scp.css */
 /* /Components/MessageInput.razor.rz.scp.css */
+.spinner-grow[b-sdtm2nrqkr] {
+    animation: spinner-grow 0.75s linear infinite;
+}
+
+.delay-0[b-sdtm2nrqkr] { animation-delay: 0s; }
+.delay-1[b-sdtm2nrqkr] { animation-delay: 0.1s; }
+.delay-2[b-sdtm2nrqkr] { animation-delay: 0.2s; }
+.delay-3[b-sdtm2nrqkr] { animation-delay: 0.3s; }
+.delay-4[b-sdtm2nrqkr] { animation-delay: 0.4s; }
+.delay-5[b-sdtm2nrqkr] { animation-delay: 0.5s; }
+.delay-6[b-sdtm2nrqkr] { animation-delay: 0.6s; }
 /* /Components/MessageSent.razor.rz.scp.css */
 /* /Components/Persona.razor.rz.scp.css */
 /* /Components/PersonaHeader.razor.rz.scp.css */
