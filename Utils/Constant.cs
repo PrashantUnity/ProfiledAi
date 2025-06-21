@@ -19,6 +19,28 @@ public static class Constant
             PlaceHolder ="Enter Gemini Api key ..."
         };
     }
+    public static PopUpModel GetProfileInputModel()
+    {
+        return new PopUpModel()
+        {
+            HeaderTitle = "Add New Profile",
+            AriaLabelledby = "NewProfileInputModel",
+            ModelId = "NewProfileInputModelId",
+            PlaceHolder ="Enter Data .."
+        };
+    }
+
+
+    public static PopUpModel GetProfiledAiSettingsInputModel()
+    {
+        return new PopUpModel()
+        {
+            HeaderTitle = "ProfiledAi Settings",
+            AriaLabelledby = "ProfiledAiSettingsModel",
+            ModelId = "ProfiledAiSettingsModelId",
+            PlaceHolder = "Enter ProfiledAi Settings ..."
+        };
+    }
     public static string ToggleClass(string classcontent, string textToToggle)
     {
         if (classcontent.Contains(textToToggle))

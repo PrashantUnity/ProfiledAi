@@ -1,7 +1,7 @@
 @using ProfiledAi.Models
 @using ProfiledAi.Utils
 <div class="@($"chat-item {Model.IsActive}")" @onclick="HideSidebarMobile">
-    <div class="chat-avatar">@Model.Avatar</div>
+    <div class="chat-avatar">@Model.Name.Substring(0,2)</div>
     <div class="chat-info">
         <div class="d-flex justify-content-between">
             <h6>@Model.Name</h6>

@@ -12,6 +12,7 @@
 @code {
     [Parameter, EditorRequired] public List<PersonaModel> Model { get; set; } = null!;
     [Parameter] public EventCallback<string> SidebarIsActive { get; set; }
+    [Parameter] public EventCallback<PersonaModel> SelectedPersonaModel { get; set; }
     [Inject] private IJSRuntime JsRuntime { get; set; } = null!;
 
     private async Task UpdateModals(PersonaModel model)
@@ -27,7 +28,7 @@
                 persona.IsActive = string.Empty;
             }
         }
-
+        await SelectedPersonaModel.InvokeAsync(model);
         await ShowSidebarMobile();
         StateHasChanged();
     }

@@ -8,12 +8,15 @@ public class LocalStorageCaching(ILocalStorageService localStorage)
     {
         return await localStorage.GetItemAsync<TU>(key);
     }
-    public async Task SetApiKeyAsync<T>(string key, T value)
+    public async Task<TU?> GetItemListAsync<TU>(string key)
+    {
+        return await localStorage.GetItemAsync<TU>(key);
+    }
+    public async Task SaveItemAsync<T>(string key, T value)
     {
         await localStorage.SetItemAsync(key, value);
     }
-
-    public async Task ClearApiKeyAsync(string key)
+    public async Task ClearItemAsync(string key)
     {
         await localStorage.RemoveItemAsync(key);
     }

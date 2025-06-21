@@ -7,6 +7,7 @@ namespace ProfiledAi.Components;
 
 public partial class MessageHeader : ComponentBase
 {
+    [Parameter, EditorRequired] public PersonaModel Model { get; set; }
     [Inject] private IJSRuntime  JsRuntime { get; set; } = null!;
     [Parameter] public EventCallback<string> ToggleClass { get; set; }
 

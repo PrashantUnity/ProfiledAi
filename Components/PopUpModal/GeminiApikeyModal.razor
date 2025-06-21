@@ -1,7 +1,3 @@
-@using ProfiledAi.Models
-@using ProfiledAi.Models.CacheModel
-@using ProfiledAi.Services
-@using ProfiledAi.Utils
 <div class="modal fade" id="@_model.ModelId" tabindex="-1" aria-labelledby="@_model.AriaLabelledby" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content whatsapp-modal">
@@ -22,21 +18,3 @@
         </div>
     </div>
 </div>
-@code{
-    [Inject] public LocalStorageCaching LocalStorageCaching { get; set; } = null!;
-    private readonly PopUpModel _model = Constant.GetGeminiApiKeyInputModel();
-    private string _apiKey = Constant.ApiKey;
-    private async Task SaveApiKey()
-    {
-        if (string.IsNullOrWhiteSpace(_apiKey))
-        {
-            return;
-        }
-        Constant.ApiKey = _apiKey;
-        var geminiApiKeyCache = new GeminiApiKeyCacheModel
-        {
-            ApiKey = _apiKey,
-        };
-        await LocalStorageCaching.SetApiKeyAsync(GeminiApiKeyCacheModel.GeminiApiKeyCache, geminiApiKeyCache);
-    }
-}

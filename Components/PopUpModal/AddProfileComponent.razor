@@ -1,0 +1,36 @@
+<div class="modal fade" id="@_model.ModelId" tabindex="-1" aria-labelledby="@_model.AriaLabelledby" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content whatsapp-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="@_model.AriaLabelledby">@_model.HeaderTitle</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @if (!_isSavingToDatabase)
+            {
+                <div class="modal-body">
+                    <form id="whatsappForm">
+                        <div class="mb-3">
+                            <label for="@_persona.Id" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="@_persona.Id" @bind-value="@_persona.Name" placeholder="@_model.PlaceHolder" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="systemPrompt" class="form-label">SystemPrompt</label>
+                            <textarea class="form-control" id="systemPrompt" rows="3" @bind="@_persona.SystemPrompt" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-end">
+                    <button type="submit" class="btn btn-primary" @onclick="Save">Save</button>
+                </div>
+            }
+            else
+            {
+                <div class="text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Saving...</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

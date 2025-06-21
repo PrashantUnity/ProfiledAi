@@ -1,4 +1,6 @@
 @using ProfiledAi.Models
+@using ProfiledAi.Utils
+@using ProfiledAi.Components.PopUpModal
 <div class="chat-header d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
         <button class="back-btn icon-btn" @onclick="HideSidebar"><i class="bi bi-arrow-left"></i></button>
@@ -9,7 +11,9 @@
         </div>
     </div>
     <div>
-        <button class="icon-btn"><i class="bi bi-three-dots-vertical"></i></button>
+        <button class="icon-btn" data-bs-toggle="modal" data-bs-target="@Constant.GetProfiledAiSettingsInputModel().GetCallerModelId()">
+            <i class="bi bi-gear" ></i>
+        </button>
     </div>
 </div>
 <div class="message-container">
@@ -18,6 +22,4 @@
         <MessageSent Model="@message"/> 
     }
 </div>
-@code{
-    [Parameter, EditorRequired] public PersonaModel Model { get; set; }
-}
+<ProfilePopupComponent Persona="@Model" />
