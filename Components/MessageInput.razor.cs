@@ -36,7 +36,7 @@ public partial class MessageInput(Gemini gemini) : ComponentBase
         }
         Model.MessageList.Add(new MessageModel()
         {
-            MessageText = _messageModel.MessageText,
+            MessageText = message,
             MessageType = Constant.MessageSentType,
             SentAt = DateTime.Now,
         });
